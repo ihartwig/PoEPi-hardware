@@ -1,5 +1,6 @@
 (module sod523 (layer F.Cu) (tedit 511019B4)
   (descr SOD523)
+  (attr smd)
   (fp_text reference SOD523 (at 0 -0.70104) (layer F.SilkS)
     (effects (font (size 0.29972 0.29972) (thickness 0.07112)))
   )

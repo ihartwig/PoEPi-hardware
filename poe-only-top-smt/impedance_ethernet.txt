@@ -1,0 +1,8 @@
+[23:06] [ihartwig@ihartwig:atlc-4.6.1]% ./src/create_bmp_for_microstrip_coupler 0.4572 0.2032 0.2032 1.524 0.03556 1.0 4.8 ms_4572_2032_2032_48.bmp
+*WARNING*  2.468212% error in representing t on the grid
+[23:07] [ihartwig@ihartwig:atlc-4.6.1]% ./src/atlc ms_4572_2032_2032_48.bmp
+ms_4572_2032_2032_48.bmp 3 Er_odd=   2.654 Er_even=   2.791 Zodd=  49.041 Zeven= 100.222 Zo=  70.107 Zdiff=  98.081 Zcomm=  50.111 Ohms VERSION=4.6.1
+
+[23:13] [ihartwig@ihartwig:atlc-4.6.1]% ./src/create_bmp_for_microstrip_coupler 0.5588 0.254 0.254 1.524 0.03556 1.0 4.8 ms_5588_254_254_48.bmp
+[23:14] [ihartwig@ihartwig:atlc-4.6.1]% ./src/atlc ms_5588_254_254_48.bmp
+ms_5588_254_254_48.bmp 3 Er_odd=   2.696 Er_even=   2.855 Zodd=  49.410 Zeven=  98.291 Zo=  69.689 Zdiff=  98.819 Zcomm=  49.145 Ohms VERSION=4.6.1
