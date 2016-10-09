@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/home/mangokid/openfet/pizero-poe/poepi-hardware/ws2812-controller/pizero-poe.sch</source>
-    <date>Thu 11 Feb 2016 08:46:41 AM EST</date>
-    <tool>Eeschema 4.0.1-3.201512221402+6198~38~ubuntu14.04.1-stable</tool>
+    <source>/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/pizero-poe.sch</source>
+    <date>Sunday, October 09, 2016 'AMt' 03:27:38 AM</date>
+    <tool>Eeschema 4.0.2-stable</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>Raspberry Pi - Power Over Ethernet &amp; PHY</title>
@@ -17,26 +17,17 @@
         <comment number="4" value=""/>
       </title_block>
     </sheet>
-    <sheet number="2" name="/sheet56B34F8B/" tstamps="/56B34F95/">
-      <title_block>
-        <title/>
-        <company/>
-        <rev/>
-        <date/>
-        <source>Ideal_Diode.sch</source>
-        <comment number="1" value=""/>
-        <comment number="2" value=""/>
-        <comment number="3" value=""/>
-        <comment number="4" value=""/>
-      </title_block>
-    </sheet>
   </design>
   <components>
     <comp ref="U1">
       <value>LTC4267</value>
-      <footprint>w_smd_dil:ssop-16</footprint>
+      <footprint>Housings_SSOP:QSOP-16_3.9x4.9mm_Pitch0.635mm</footprint>
       <fields>
-        <field name="Digikey Part No.">LTC4267CGN-3#PBF-ND</field>
+        <field name="Digikey Part No">LTC4267CGN-3#PBF-ND</field>
+        <field name="Mfg">Linear Technology</field>
+        <field name="Mfg Part No">LTC4267CGN#PBF</field>
+        <field name="Description">Power Over Ethernet Controller 1 Channel 802.3af (PoE) 16-SSOP</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="ltc4267" part="LTC4267"/>
       <sheetpath names="/" tstamps="/"/>
@@ -44,29 +35,42 @@
     </comp>
     <comp ref="D1">
       <value>BRIDGE</value>
-      <footprint>w_smd_diode:MBS</footprint>
+      <footprint>pizero-poe-special:MBS</footprint>
       <fields>
-        <field name="Mouser Part No.">621-HD01-T </field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Diodes Inc</field>
+        <field name="Mfg Part No">HD01-T</field>
+        <field name="Digikey Part No">HD01DICT-ND</field>
+        <field name="Description">Bridge Rectifier Single Phase 100V 800mA Surface Mount 4-MiniDIP</field>
       </fields>
-      <libsource lib="w_device" part="BRIDGE"/>
+      <libsource lib="pizero-poe-cache" part="BRIDGE"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B0CD4F</tstamp>
     </comp>
     <comp ref="C1">
-      <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <value>0.1uf 100V</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Samsung</field>
+        <field name="Mfg Part No">CL10B104KC8NNNC</field>
+        <field name="Digikey Part No">1276-6807-1-ND</field>
+        <field name="Description">0.10µF 100V Ceramic Capacitor X7R 0603</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B0D26B</tstamp>
     </comp>
     <comp ref="D3">
-      <value>ZENER</value>
-      <footprint>w_smd_diode:do214ac</footprint>
+      <value>SMAJ58A</value>
+      <footprint>Diodes_SMD:DO-214BA</footprint>
       <fields>
         <field name="Mouser Part No.">576-SMAJ58A</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Littelfuse</field>
+        <field name="Mfg Part No">SMAJ58A</field>
+        <field name="Digikey Part No">SMAJ58ALFCT-ND</field>
+        <field name="Description">TVS DIODE 58VWM 93.6VC SMA</field>
       </fields>
       <libsource lib="device" part="ZENER"/>
       <sheetpath names="/" tstamps="/"/>
@@ -74,8 +78,13 @@
     </comp>
     <comp ref="L1">
       <value>2.2uH</value>
-      <footprint>w_smd_inductors:inductor_smd_1008</footprint>
+      <footprint>Resistors_SMD:R_1206</footprint>
       <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Murata Electronics </field>
+        <field name="Mfg Part No">LQM2HPN2R2MEHL</field>
+        <field name="Digikey Part No">490-10966-1-ND</field>
+        <field name="Description">2.2µH Unshielded Multilayer Inductor 1.3A 188 mOhm Max 1008 (2520 Metric)</field>
         <field name="Mouser Part No.">81-LQM2HPN2R2MEHL</field>
       </fields>
       <libsource lib="device" part="INDUCTOR"/>
@@ -83,18 +92,20 @@
       <tstamp>56B0D455</tstamp>
     </comp>
     <comp ref="R1">
-      <value>DNP</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields/>
+      <value>nostuff</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B0DD06</tstamp>
     </comp>
     <comp ref="R2">
       <value>10k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">754-RR0510P-103D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -102,35 +113,28 @@
     </comp>
     <comp ref="Q1">
       <value>SI3440DV</value>
-      <footprint>w_smd_trans:tsot-6</footprint>
+      <footprint>TO_SOT_Packages_SMD:SOT-23-6</footprint>
       <fields>
         <field name="Mouser Part No.">781-SI3440DV-E3</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Vishay Siliconix</field>
+        <field name="Mfg Part No">SI3440DV-T1-E3</field>
+        <field name="Digikey Part No">SI3440DV-T1-E3CT-ND</field>
+        <field name="Description">MOSFET N-CH 150V 1.2A 6-TSOP</field>
       </fields>
-      <libsource lib="w_transistor" part="SI3440DV"/>
+      <libsource lib="pizero-poe-cache" part="SI3440DV"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B0F215</tstamp>
     </comp>
-    <comp ref="C6">
-      <value>C</value>
-      <footprint>w_smd_cap:c_0402</footprint>
-      <fields/>
-      <libsource lib="device" part="C"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B0F63F</tstamp>
-    </comp>
-    <comp ref="R5">
-      <value>R</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields/>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B0F6E3</tstamp>
-    </comp>
     <comp ref="C5">
-      <value>6.8uf</value>
-      <footprint>w_smd_cap:c_tant_D</footprint>
+      <value>2.2uF 100V</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
       <fields>
-        <field name="Mouser Part No.">74-293D685X9050D2TE3</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Murata Electronics</field>
+        <field name="Mfg Part No">GRM31CR72A225KA73L</field>
+        <field name="Digikey Part No">490-7209-1-ND</field>
+        <field name="Description">2.2µF 100V Ceramic Capacitor X7R 1206</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -138,9 +142,14 @@
     </comp>
     <comp ref="R6">
       <value>0.05</value>
-      <footprint>w_smd_resistors:r_1206</footprint>
+      <footprint>Resistors_SMD:R_1206</footprint>
       <fields>
         <field name="Mouser Part No.">660-UR732BTTD50L0F</field>
+        <field name="Mfg">Stackpole Electronics</field>
+        <field name="Mfg Part No">CSNL1206FT50L0</field>
+        <field name="Digikey Part No">CSNL1206FT50L0CT-ND</field>
+        <field name="Description">RES SMD 0.05 OHM 1% 1W 1206</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -148,39 +157,52 @@
     </comp>
     <comp ref="R4">
       <value>10k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">754-RR0510P-103D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B101D5</tstamp>
     </comp>
     <comp ref="D5">
-      <value>D_Schottky</value>
-      <footprint>w_smd_diode:do214ab</footprint>
+      <value>SBM1040</value>
+      <footprint>Diodes_SMD:DO-214BA</footprint>
       <fields>
-        <field name="Mouser Part No.">621-B360A-F</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Rohm Semiconductor</field>
+        <field name="Mfg Part No">RB058L150TE25</field>
+        <field name="Digikey Part No">RB058L150TE25CT-ND</field>
+        <field name="Description">Diode Schottky 150V 3A Surface Mount PMDS</field>
       </fields>
       <libsource lib="device" part="D_Schottky"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B1052C</tstamp>
     </comp>
     <comp ref="C12">
-      <value>CP</value>
-      <footprint>w_smd_cap:c_elec_4x4.5</footprint>
+      <value>470uF</value>
+      <footprint>Capacitors_SMD:c_elec_8x10</footprint>
       <fields>
-        <field name="Mouser Part No.">667-EEE-1AA330WR</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Nichicon</field>
+        <field name="Mfg Part No">UWT1A471MNL1GS</field>
+        <field name="Digikey Part No">493-2169-1-ND</field>
+        <field name="Description">470µF 10V Aluminum Capacitors Radial, Can - SMD </field>
       </fields>
       <libsource lib="device" part="CP"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B107AC</tstamp>
     </comp>
     <comp ref="U2">
-      <value>PAS291</value>
+      <value>PS2911-1-K-AX</value>
       <footprint>project_foot:OPTO_ISO</footprint>
       <fields>
         <field name="Mouser Part No.">551-PS2911-1-K-AX</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">CEL</field>
+        <field name="Mfg Part No">PS2911-1-K-AX</field>
+        <field name="Digikey Part No">PS2911-1-K-AX-ND</field>
+        <field name="Description">Optoisolator Transistor Output 2500Vrms 1 Channel 4-Mini-Flat</field>
       </fields>
       <libsource lib="opto" part="FODM3012"/>
       <sheetpath names="/" tstamps="/"/>
@@ -188,17 +210,19 @@
     </comp>
     <comp ref="R9">
       <value>1k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields/>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B12388</tstamp>
     </comp>
     <comp ref="R10">
       <value>10k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">754-RR0510P-103D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -206,9 +230,9 @@
     </comp>
     <comp ref="R11">
       <value>10k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">754-RR0510P-103D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -216,9 +240,9 @@
     </comp>
     <comp ref="R12">
       <value>3.3k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">754-RR0510P-332D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -226,19 +250,23 @@
     </comp>
     <comp ref="C14">
       <value>6.8nf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">81-GRM155R71H682KA8D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B13A49</tstamp>
     </comp>
     <comp ref="C13">
-      <value>2nf</value>
-      <footprint>w_smd_cap:c_0603</footprint>
+      <value>2.2nF 250Vac</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">81-GRM1885C1H202JA1D</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">TDK Corporation</field>
+        <field name="Mfg Part No">C1608C0G2E222J080AA</field>
+        <field name="Digikey Part No">445-15244-1-ND</field>
+        <field name="Description">2200pF 250V Ceramic Capacitor C0G, NP0 0603</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -246,39 +274,34 @@
     </comp>
     <comp ref="D4">
       <value>BAS516</value>
-      <footprint>w_smd_diode:sod523</footprint>
+      <footprint>pizero-poe-special:sod523</footprint>
       <fields>
         <field name="Mouser Part No.">771-BAS516-T/R</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">NXP Semiconductors</field>
+        <field name="Mfg Part No">BAS516,115</field>
+        <field name="Digikey Part No">568-1603-1-ND</field>
+        <field name="Description">Diode Standard 100V 250mA (DC) Surface Mount SOD-523</field>
       </fields>
-      <libsource lib="w_device" part="DIODE"/>
+      <libsource lib="pizero-poe-cache" part="DIODE"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B15D29</tstamp>
     </comp>
     <comp ref="R7">
       <value>6.8k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">754-RR0510P-682D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B1898C</tstamp>
     </comp>
-    <comp ref="IC1">
-      <value>ENC28J60-I/ML</value>
-      <footprint>w_smd_qfn:qfn-28</footprint>
-      <fields>
-        <field name="Mouser Part No.">579-ENC28J60-I/ML</field>
-      </fields>
-      <libsource lib="microchip" part="ENC28J60-I/ML"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B211DF</tstamp>
-    </comp>
     <comp ref="R8">
       <value>2.32k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">667-ERJ-2RKF2321X</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -286,9 +309,9 @@
     </comp>
     <comp ref="C11">
       <value>10uf</value>
-      <footprint>w_smd_cap:c_0603</footprint>
+      <footprint>Capacitors_SMD:C_1206</footprint>
       <fields>
-        <field name="Mouser Part No.">81-ZRB18AR61C106ME1L</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -299,6 +322,10 @@
       <footprint>w_crystal:crystal_smd_5x3.2mm</footprint>
       <fields>
         <field name="Mouser Part No.">774-445I23D25M00000</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">CTS Frequency Controls</field>
+        <field name="Mfg Part No">445I23D25M00000</field>
+        <field name="Digikey Part No">CTX1175CT-ND</field>
       </fields>
       <libsource lib="device" part="Crystal"/>
       <sheetpath names="/" tstamps="/"/>
@@ -306,9 +333,9 @@
     </comp>
     <comp ref="C2">
       <value>16pf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">81-GRM1555C1H160JA1D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -316,9 +343,9 @@
     </comp>
     <comp ref="C3">
       <value>16pf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">81-GRM1555C1H160JA1D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -326,9 +353,9 @@
     </comp>
     <comp ref="R3">
       <value>1k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">754-RR0510P-102D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -336,9 +363,9 @@
     </comp>
     <comp ref="C7">
       <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -346,9 +373,9 @@
     </comp>
     <comp ref="C8">
       <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -356,9 +383,9 @@
     </comp>
     <comp ref="C9">
       <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -366,126 +393,37 @@
     </comp>
     <comp ref="C10">
       <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0603</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B2B06C</tstamp>
     </comp>
-    <comp ref="P1">
-      <value>Raspberry_Pi_+_Conn</value>
-      <fields/>
-      <libsource lib="pizero-poe-cache" part="Raspberry_Pi_+_Conn"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B2C38E</tstamp>
-    </comp>
-    <comp ref="U3">
-      <value>LM1117IMPX-ADJ</value>
-      <footprint>w_smd_trans:sot223</footprint>
-      <fields>
-        <field name="Mouser Part No.">926-M1117IMPXADJNOPB</field>
-      </fields>
-      <libsource lib="lm1117" part="LM1117IMPX-ADJ"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BA14D6</tstamp>
-    </comp>
-    <comp ref="R13">
-      <value>390</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">594-MCT06030C3900FP5</field>
-      </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BA14EC</tstamp>
-    </comp>
-    <comp ref="R15">
-      <value>240</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">754-RR0816P-241D</field>
-      </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BA14F4</tstamp>
-    </comp>
-    <comp ref="D6">
-      <value>LED</value>
-      <footprint>w_smd_leds:Led_0603</footprint>
-      <fields>
-        <field name="Mouser Part No.">743-HT-191USD</field>
-      </fields>
-      <libsource lib="device" part="LED"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BA150E</tstamp>
-    </comp>
-    <comp ref="R18">
-      <value>360</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">71-CRCW0603316RFKEB</field>
-      </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BA1516</tstamp>
-    </comp>
-    <comp ref="C19">
-      <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
-      </fields>
-      <libsource lib="device" part="C"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BA152B</tstamp>
-    </comp>
-    <comp ref="C20">
-      <value>1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">810-C1005X5R1H104K</field>
-      </fields>
-      <libsource lib="device" part="C"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BA154A</tstamp>
-    </comp>
-    <comp ref="T1">
-      <value>PULSE_H1197</value>
-      <footprint>project_foot:H2019</footprint>
-      <fields>
-        <field name="Mouser Part No.">673-H1197FNL</field>
-      </fields>
-      <libsource lib="pulse_h1197" part="PULSE_H1197"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56BAF03B</tstamp>
-    </comp>
     <comp ref="D2">
       <value>BRIDGE</value>
-      <footprint>w_smd_diode:MBS</footprint>
+      <footprint>pizero-poe-special:MBS</footprint>
       <fields>
-        <field name="Mouser Part No.">621-HD01-T </field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Diodes Inc</field>
+        <field name="Mfg Part No">HD01-T</field>
+        <field name="Digikey Part No">HD01DICT-ND</field>
+        <field name="Description">Bridge Rectifier Single Phase 100V 800mA Surface Mount 4-MiniDIP</field>
       </fields>
-      <libsource lib="w_device" part="BRIDGE"/>
+      <libsource lib="pizero-poe-cache" part="BRIDGE"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B4C1A4</tstamp>
-    </comp>
-    <comp ref="C4">
-      <value>220uf</value>
-      <footprint>w_smd_cap:c_tant_B</footprint>
-      <fields>
-        <field name="Mouser Part No.">581-TAJB475K025R</field>
-      </fields>
-      <libsource lib="device" part="CP"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B5C971</tstamp>
     </comp>
     <comp ref="J1">
       <value>RJ45-LED</value>
       <footprint>w_conn_pc:rj45-tyco-2-406549-7</footprint>
       <fields>
-        <field name="Mouser Part No.">710-615008137421</field>
+        <field name="Type">TH</field>
+        <field name="Mfg">Amphenol</field>
+        <field name="Mfg Part No">RJHSE-5081</field>
+        <field name="Digikey Part No">RJHSE-5081-ND</field>
+        <field name="Description">Jack Modular Connector 8p8c (RJ45, Ethernet) 90° Angle (Right) Unshielded</field>
       </fields>
       <libsource lib="pizero-poe-cache" part="RJ45-LED"/>
       <sheetpath names="/" tstamps="/"/>
@@ -493,9 +431,9 @@
     </comp>
     <comp ref="R21">
       <value>549</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">667-ERJ-2RKF5490X</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -503,9 +441,9 @@
     </comp>
     <comp ref="R22">
       <value>549</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">667-ERJ-2RKF5490X</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -516,6 +454,11 @@
       <footprint>project_foot:PoE_TRANS</footprint>
       <fields>
         <field name="Mouser Part No.">710-7491199501</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Wurth Electronics Inc</field>
+        <field name="Mfg Part No">7491199501</field>
+        <field name="Digikey Part No">732-2433-1-ND</field>
+        <field name="Description">TRANS FLYBACK POE 127UH SMD</field>
       </fields>
       <libsource lib="pizero-poe-cache" part="POE_TRANS"/>
       <sheetpath names="/" tstamps="/"/>
@@ -523,95 +466,24 @@
     </comp>
     <comp ref="T3">
       <value>VOLTAGE_REF</value>
-      <footprint>w_smd_trans:sot23</footprint>
+      <footprint>TO_SOT_Packages_SMD:SOT-23</footprint>
       <fields>
         <field name="Mouser Part No.">863-TLV431BSN1T1G</field>
+        <field name="Mfg">ON Semiconductor</field>
+        <field name="Mfg Part No">TLV431BSN1T1G</field>
+        <field name="Digikey Part No">TLV431BSN1T1GOSCT-ND</field>
+        <field name="Description">Shunt Voltage Reference IC 16V ±0.5% 20mA SOT-23-3 (TO-236)</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="pizero-poe-cache" part="VOLTAGE_REF"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56B4519A</tstamp>
     </comp>
-    <comp ref="Q3">
-      <value>BSS138</value>
-      <footprint>w_smd_trans:sot23</footprint>
-      <fields>
-        <field name="Mouser Part No.">512-BSS138</field>
-      </fields>
-      <libsource lib="transistors" part="BSS138"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B5DB55</tstamp>
-    </comp>
-    <comp ref="R24">
-      <value>14k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">667-ERJ-2RKF1402X</field>
-      </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B5DE18</tstamp>
-    </comp>
-    <comp ref="R23">
-      <value>14k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">667-ERJ-2RKF1402X</field>
-      </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B5DF1E</tstamp>
-    </comp>
-    <comp ref="C17">
-      <value>CP</value>
-      <footprint>w_smd_cap:c_elec_8x6.5</footprint>
-      <fields>
-        <field name="Mouser Part No.">667-EEE-1AA221P</field>
-      </fields>
-      <libsource lib="device" part="CP"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B5FD6C</tstamp>
-    </comp>
-    <comp ref="R25">
-      <value>100</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
-      <fields>
-        <field name="Mouser Part No.">71-CRCW0402-100-E3</field>
-      </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B64836</tstamp>
-    </comp>
-    <comp ref="D7">
-      <value>ZENER</value>
-      <footprint>w_smd_diode:sod123</footprint>
-      <fields>
-        <field name="Mouser Part No.">771-BZT52HB5V1115</field>
-      </fields>
-      <libsource lib="device" part="ZENER"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B67519</tstamp>
-    </comp>
-    <comp ref="P2">
-      <value>WS2812 Cn.</value>
-      <footprint>w_pin_strip:pin_strip_3</footprint>
-      <fields/>
-      <libsource lib="conn" part="CONN_01X03"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B7714C</tstamp>
-    </comp>
-    <comp ref="P3">
-      <value>WS2812 Cn.</value>
-      <footprint>w_pin_strip:pin_strip_3-90</footprint>
-      <fields/>
-      <libsource lib="conn" part="CONN_01X03"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamp>56B7A520</tstamp>
-    </comp>
     <comp ref="C18">
       <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -619,9 +491,9 @@
     </comp>
     <comp ref="C21">
       <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0402</footprint>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -629,9 +501,9 @@
     </comp>
     <comp ref="R14">
       <value>49.9</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">660-RK73H1ETQTP49R9F</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -639,9 +511,9 @@
     </comp>
     <comp ref="R16">
       <value>49.9</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">660-RK73H1ETQTP49R9F</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -649,9 +521,9 @@
     </comp>
     <comp ref="R17">
       <value>49.9</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">660-RK73H1ETQTP49R9F</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -659,9 +531,9 @@
     </comp>
     <comp ref="R26">
       <value>49.9</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">660-RK73H1ETQTP49R9F</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
@@ -669,88 +541,447 @@
     </comp>
     <comp ref="L2">
       <value>BEAD</value>
-      <footprint>w_smd_inductors:inductor_smd_0402</footprint>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">81-BLM15AG102SN1D</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="INDUCTOR"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56BF17E4</tstamp>
     </comp>
     <comp ref="C22">
-      <value>1uf</value>
-      <footprint>w_smd_cap:c_0805</footprint>
+      <value>2.2uF 100V</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
       <fields>
-        <field name="Mouser Part No.">810-C2012X7S2A105K</field>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Murata Electronics</field>
+        <field name="Mfg Part No">GRM31CR72A225KA73L</field>
+        <field name="Digikey Part No">490-7209-1-ND</field>
+        <field name="Description">2.2µF 100V Ceramic Capacitor X7R 1206</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56C08D91</tstamp>
     </comp>
     <comp ref="C15">
-      <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0603</footprint>
+      <value>0.1uF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56C23628</tstamp>
     </comp>
     <comp ref="C16">
-      <value>0.1uf</value>
-      <footprint>w_smd_cap:c_0603</footprint>
+      <value>0.1uF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">710-885012105001</field>
+        <field name="Type">SMT</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>56C23BA8</tstamp>
     </comp>
-    <comp ref="Q2">
-      <value>BSS138</value>
-      <footprint>w_smd_trans:sot23</footprint>
+    <comp ref="P2">
+      <value>dnp-REF-182665-01</value>
+      <footprint>pizero-poe-special:Pin_Header_Straight_TH-SMT-NoPaste_2x20</footprint>
       <fields>
-        <field name="Mouser Part No.">621-DMG2305UX-13</field>
+        <field name="Type">nostuff</field>
       </fields>
-      <libsource lib="transistors" part="BSS138"/>
-      <sheetpath names="/sheet56B34F8B/" tstamps="/56B34F95/"/>
-      <tstamp>54F14605</tstamp>
+      <libsource lib="conn" part="CONN_02X20"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E78A97</tstamp>
     </comp>
-    <comp ref="U5">
-      <value>DMMT5401</value>
-      <footprint>w_smd_trans:sot23-6</footprint>
+    <comp ref="U3">
+      <value>nostuff-AT24CS32-SSHM</value>
+      <footprint>Housings_SSOP:TSSOP-8_4.4x3mm_Pitch0.65mm</footprint>
       <fields>
-        <field name="Mouser Part No.">621-DMMT5401-7-F</field>
+        <field name="Type">nostuff</field>
       </fields>
-      <libsource lib="pizero-poe-cache" part="DMMT5401"/>
-      <sheetpath names="/sheet56B34F8B/" tstamps="/56B34F95/"/>
-      <tstamp>54F1CFA3</tstamp>
+      <libsource lib="memory" part="AT24CS32-SSHM"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E79C84</tstamp>
     </comp>
     <comp ref="R20">
-      <value>47k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <value>nostuff-3.9k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">667-ERJ-2RKF4702X</field>
+        <field name="Type">nostuff</field>
       </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/sheet56B34F8B/" tstamps="/56B34F95/"/>
-      <tstamp>54F1D101</tstamp>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E79C91</tstamp>
+    </comp>
+    <comp ref="R23">
+      <value>nostuff-3.9k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E79C98</tstamp>
+    </comp>
+    <comp ref="R18">
+      <value>nostuff-1k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E79C9F</tstamp>
+    </comp>
+    <comp ref="C17">
+      <value>nostuff-0.1u</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E79CC8</tstamp>
+    </comp>
+    <comp ref="Q3">
+      <value>Q_PMOS_GSD</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Diodes Inc</field>
+        <field name="Mfg Part No">DMP3099L-7</field>
+        <field name="Digikey Part No">DMP3099L-7DICT-ND</field>
+        <field name="Description">MOSFET P-CH 30V SOT23</field>
+      </fields>
+      <libsource lib="device" part="Q_PMOS_GSD"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7A16F</tstamp>
+    </comp>
+    <comp ref="R15">
+      <value>10k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+      </fields>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7A176</tstamp>
+    </comp>
+    <comp ref="Q2">
+      <value>DMMT3906_Dual_PNP</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Diodes Inc</field>
+        <field name="Mfg Part No">DMMT3906-7-F</field>
+        <field name="Digikey Part No">DMMT3906-7-FDICT-ND</field>
+        <field name="Description">TRANS 2PNP 40V 0.2A SOT26</field>
+      </fields>
+      <libsource lib="pizero-poe-cache" part="DMMT3906_Dual_PNP"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7A180</tstamp>
     </comp>
     <comp ref="R19">
-      <value>10k</value>
-      <footprint>w_smd_resistors:r_0402</footprint>
+      <value>47k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
-        <field name="Mouser Part No.">71-CRCW0402-10K-E3</field>
+        <field name="Type">SMT</field>
       </fields>
-      <libsource lib="device" part="R"/>
-      <sheetpath names="/sheet56B34F8B/" tstamps="/56B34F95/"/>
-      <tstamp>54F1D193</tstamp>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7A187</tstamp>
+    </comp>
+    <comp ref="U4">
+      <value>AP7365_SOT-23-5</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Diodes Inc</field>
+        <field name="Mfg Part No">AP7365-33WG-7</field>
+        <field name="Digikey Part No">AP7365-33WG-7DICT-ND</field>
+        <field name="Description">Linear Voltage Regulator IC Positive Fixed 1 Output 3.3V 600mA SOT-25</field>
+      </fields>
+      <libsource lib="pizero-poe-cache" part="AP7365_SOT-23-5"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7A1A0</tstamp>
+    </comp>
+    <comp ref="C19">
+      <value>1uF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+      </fields>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7A1A7</tstamp>
+    </comp>
+    <comp ref="C20">
+      <value>1uF</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+      </fields>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E7A1B1</tstamp>
+    </comp>
+    <comp ref="H2">
+      <value>hole-metalized-no4</value>
+      <footprint>pizero-poe-special:hole-m3</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="pizero-poe-cache" part="hole-metalized-no4"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E816E6</tstamp>
+    </comp>
+    <comp ref="H1">
+      <value>hole-metalized-no4</value>
+      <footprint>pizero-poe-special:hole-m3</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="pizero-poe-cache" part="hole-metalized-no4"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E81820</tstamp>
+    </comp>
+    <comp ref="H3">
+      <value>hole-metalized-no4</value>
+      <footprint>pizero-poe-special:hole-m3</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="pizero-poe-cache" part="hole-metalized-no4"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E81AD5</tstamp>
+    </comp>
+    <comp ref="H4">
+      <value>hole-metalized-no4</value>
+      <footprint>pizero-poe-special:hole-m3</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="pizero-poe-cache" part="hole-metalized-no4"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E81EBD</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>LED Green</value>
+      <footprint>LEDs:LED_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Lite-On</field>
+        <field name="Mfg Part No">LTST-C190GKT</field>
+        <field name="Digikey Part No">160-1183-1-ND</field>
+        <field name="Description">LED GREEN CLEAR 0603 SMD</field>
+      </fields>
+      <libsource lib="device" part="Led_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E82421</tstamp>
+    </comp>
+    <comp ref="R13">
+      <value>1k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+      </fields>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E82E39</tstamp>
+    </comp>
+    <comp ref="D7">
+      <value>LED Green</value>
+      <footprint>LEDs:LED_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Lite-On</field>
+        <field name="Mfg Part No">LTST-C190GKT</field>
+        <field name="Digikey Part No">160-1183-1-ND</field>
+        <field name="Description">LED GREEN CLEAR 0603 SMD</field>
+      </fields>
+      <libsource lib="device" part="Led_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E83689</tstamp>
+    </comp>
+    <comp ref="R24">
+      <value>220</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+      </fields>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E83697</tstamp>
+    </comp>
+    <comp ref="IC1">
+      <value>ENC28J60-I/ML</value>
+      <footprint>Housings_DFN_QFN:QFN-28-1EP_6x6mm_Pitch0.65mm</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Microchip Technology</field>
+        <field name="Mfg Part No">ENC28J60-I/ML</field>
+        <field name="Digikey Part No">ENC28J60-I/ML-ND</field>
+      </fields>
+      <libsource lib="microchip" part="ENC28J60-I/ML"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57E86DE8</tstamp>
+    </comp>
+    <comp ref="W2">
+      <value>TEST_1P</value>
+      <footprint>Measurement_Points:Measurement_Point_Round-SMD-Pad_Small</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EAA583</tstamp>
+    </comp>
+    <comp ref="W1">
+      <value>TEST_1P</value>
+      <footprint>Measurement_Points:Measurement_Point_Round-SMD-Pad_Small</footprint>
+      <fields>
+        <field name="Type">nostuff</field>
+      </fields>
+      <libsource lib="conn" part="TEST_1P"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EAA680</tstamp>
+    </comp>
+    <comp ref="C23">
+      <value>2.2uF 100V</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Murata Electronics</field>
+        <field name="Mfg Part No">GRM31CR72A225KA73L</field>
+        <field name="Digikey Part No">490-7209-1-ND</field>
+        <field name="Description">2.2µF 100V Ceramic Capacitor X7R 1206</field>
+      </fields>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EB6F61</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>2.2uF 100V</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Murata Electronics</field>
+        <field name="Mfg Part No">GRM31CR72A225KA73L</field>
+        <field name="Digikey Part No">490-7209-1-ND</field>
+        <field name="Description">2.2µF 100V Ceramic Capacitor X7R 1206</field>
+      </fields>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EB7E80</tstamp>
+    </comp>
+    <comp ref="C24">
+      <value>0.1uF 100V</value>
+      <footprint>Capacitors_SMD:C_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Samsung</field>
+        <field name="Mfg Part No">CL10B104KC8NNNC</field>
+        <field name="Digikey Part No">1276-6807-1-ND</field>
+        <field name="Description">0.10µF 100V Ceramic Capacitor X7R 0603</field>
+      </fields>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EC797F</tstamp>
+    </comp>
+    <comp ref="C25">
+      <value>2.2uF 100V</value>
+      <footprint>Capacitors_SMD:C_1206</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Murata Electronics</field>
+        <field name="Mfg Part No">GRM31CR72A225KA73L</field>
+        <field name="Digikey Part No">490-7209-1-ND</field>
+        <field name="Description">2.2µF 100V Ceramic Capacitor X7R 1206</field>
+      </fields>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57EC8706</tstamp>
+    </comp>
+    <comp ref="D8">
+      <value>LED Green</value>
+      <footprint>LEDs:LED_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Lite-On</field>
+        <field name="Mfg Part No">LTST-C190GKT</field>
+        <field name="Digikey Part No">160-1183-1-ND</field>
+        <field name="Description">LED GREEN CLEAR 0603 SMD</field>
+      </fields>
+      <libsource lib="device" part="Led_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57F0E129</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>23k</value>
+      <footprint>Resistors_SMD:R_0603</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+      </fields>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57F0E136</tstamp>
+    </comp>
+    <comp ref="T1">
+      <value>H2019FNL</value>
+      <footprint>pizero-poe-special:Transformer_Pulse_H2019FNL</footprint>
+      <fields>
+        <field name="Type">SMT</field>
+        <field name="Mfg">Wurth Electronics Inc</field>
+        <field name="Mfg Part No">749013011A</field>
+        <field name="Digikey Part No">732-7063-1-ND</field>
+        <field name="Description">TRANS WE-LAN 10/100 POE SMD</field>
+        <field name="Alt Mfg">Pulse Electronics</field>
+        <field name="Alt Mfg Part No">H2019FNL</field>
+      </fields>
+      <libsource lib="pizero-poe-cache" part="H2019FNL"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57F5EF7F</tstamp>
     </comp>
   </components>
   <libparts>
-    <libpart lib="w_device" part="BRIDGE">
-      <description>Diode bridge</description>
+    <libpart lib="pizero-poe-cache" part="AP7365_SOT-23-5">
+      <footprints>
+        <fp>SOT23-5*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AP7365_SOT-23-5</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VIN" type="input"/>
+        <pin num="2" name="GND" type="input"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="5" name="VOUT" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="memory" part="AT24CS32-SSHM">
+      <description>32Kb (4096x8) Serial EEPROM with Unique Serial Number, SO8</description>
+      <docs>http://www.atmel.com/Images/Atmel-8869-SEEPROM-AT24CS32-Datasheet.pdf</docs>
+      <footprints>
+        <fp>SO8*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">AT24CS32-SSHM</field>
+        <field name="Footprint">SO8</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A0" type="input"/>
+        <pin num="2" name="A1" type="input"/>
+        <pin num="3" name="A2" type="input"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="SDA" type="BiDi"/>
+        <pin num="6" name="SCL" type="input"/>
+        <pin num="7" name="WP" type="input"/>
+        <pin num="8" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="pizero-poe-cache" part="BRIDGE">
       <fields>
         <field name="Reference">D</field>
         <field name="Value">BRIDGE</field>
@@ -760,23 +991,6 @@
         <pin num="2" name="~1" type="input"/>
         <pin num="3" name="~2" type="input"/>
         <pin num="4" name="V-" type="input"/>
-      </pins>
-    </libpart>
-    <libpart lib="transistors" part="BSS138">
-      <description>50V Vds, 0.22A Id, N-Channel MOSFET, SOT-23</description>
-      <docs>http://www.fairchildsemi.com/ds/BS/BSS138.pdf</docs>
-      <footprints>
-        <fp>SOT-23*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">Q</field>
-        <field name="Value">BSS138</field>
-        <field name="Footprint">SOT-23</field>
-      </fields>
-      <pins>
-        <pin num="1" name="G" type="passive"/>
-        <pin num="2" name="S" type="passive"/>
-        <pin num="3" name="D" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="device" part="C">
@@ -797,22 +1011,59 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="conn" part="CONN_01X03">
-      <description>Connector 01x03</description>
+    <libpart lib="conn" part="CONN_02X20">
+      <description>Connector 02x20</description>
       <footprints>
-        <fp>Pin_Header_Straight_1X03</fp>
-        <fp>Pin_Header_Angled_1X03</fp>
-        <fp>Socket_Strip_Straight_1X03</fp>
-        <fp>Socket_Strip_Angled_1X03</fp>
+        <fp>Pin_Header_Straight_2X20</fp>
+        <fp>Pin_Header_Angled_2X20</fp>
+        <fp>Socket_Strip_Straight_2X20</fp>
+        <fp>Socket_Strip_Angled_2X20</fp>
       </footprints>
       <fields>
         <field name="Reference">P</field>
-        <field name="Value">CONN_01X03</field>
+        <field name="Value">CONN_02X20</field>
       </fields>
       <pins>
         <pin num="1" name="P1" type="passive"/>
         <pin num="2" name="P2" type="passive"/>
         <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+        <pin num="8" name="P8" type="passive"/>
+        <pin num="9" name="P9" type="passive"/>
+        <pin num="10" name="P10" type="passive"/>
+        <pin num="11" name="P11" type="passive"/>
+        <pin num="12" name="P12" type="passive"/>
+        <pin num="13" name="P13" type="passive"/>
+        <pin num="14" name="P14" type="passive"/>
+        <pin num="15" name="P15" type="passive"/>
+        <pin num="16" name="P16" type="passive"/>
+        <pin num="17" name="P17" type="passive"/>
+        <pin num="18" name="P18" type="passive"/>
+        <pin num="19" name="P19" type="passive"/>
+        <pin num="20" name="P20" type="passive"/>
+        <pin num="21" name="P21" type="passive"/>
+        <pin num="22" name="P22" type="passive"/>
+        <pin num="23" name="P23" type="passive"/>
+        <pin num="24" name="P24" type="passive"/>
+        <pin num="25" name="P25" type="passive"/>
+        <pin num="26" name="P26" type="passive"/>
+        <pin num="27" name="P27" type="passive"/>
+        <pin num="28" name="P28" type="passive"/>
+        <pin num="29" name="P29" type="passive"/>
+        <pin num="30" name="P30" type="passive"/>
+        <pin num="31" name="P31" type="passive"/>
+        <pin num="32" name="P32" type="passive"/>
+        <pin num="33" name="P33" type="passive"/>
+        <pin num="34" name="P34" type="passive"/>
+        <pin num="35" name="P35" type="passive"/>
+        <pin num="36" name="P36" type="passive"/>
+        <pin num="37" name="P37" type="passive"/>
+        <pin num="38" name="P38" type="passive"/>
+        <pin num="39" name="P39" type="passive"/>
+        <pin num="40" name="P40" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="device" part="CP">
@@ -834,6 +1085,24 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="device" part="C_Small">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="device" part="Crystal">
       <description>Two pin crystal</description>
       <footprints>
@@ -848,8 +1117,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="w_device" part="DIODE">
-      <description>Diode simple</description>
+    <libpart lib="pizero-poe-cache" part="DIODE">
       <fields>
         <field name="Reference">D</field>
         <field name="Value">DIODE</field>
@@ -859,18 +1127,20 @@
         <pin num="2" name="K" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="pizero-poe-cache" part="DMMT5401">
+    <libpart lib="pizero-poe-cache" part="DMMT3906_Dual_PNP">
+      <footprints>
+        <fp>SOT-23-6</fp>
+      </footprints>
       <fields>
-        <field name="Reference">U</field>
-        <field name="Value">DMMT5401</field>
+        <field name="Reference">Q</field>
+        <field name="Value">DMMT3906_Dual_PNP</field>
       </fields>
       <pins>
-        <pin num="1" name="~" type="input"/>
-        <pin num="2" name="~" type="input"/>
-        <pin num="3" name="~" type="input"/>
-        <pin num="4" name="~" type="input"/>
-        <pin num="5" name="~" type="input"/>
-        <pin num="6" name="~" type="input"/>
+        <pin num="1" name="E1" type="passive"/>
+        <pin num="3" name="E2" type="passive"/>
+        <pin num="4" name="C2" type="passive"/>
+        <pin num="5" name="B" type="input"/>
+        <pin num="6" name="C1" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="device" part="D_Schottky">
@@ -895,12 +1165,11 @@
       <description>ENC28J60 Single Chip Ethernet Interface, QFN-28+EP</description>
       <docs>http://ww1.microchip.com/downloads/en/devicedoc/39662a.pdf</docs>
       <footprints>
-        <fp>QFP*</fp>
+        <fp>QFN-28-1EP_6x6mm_Pitch0.65mm</fp>
       </footprints>
       <fields>
         <field name="Reference">IC</field>
         <field name="Value">ENC28J60-I/ML</field>
-        <field name="Footprint">QFN-28</field>
       </fields>
       <pins>
         <pin num="1" name="~WOL" type="output"/>
@@ -931,6 +1200,7 @@
         <pin num="26" name="VSS" type="power_in"/>
         <pin num="27" name="CLKOUT" type="output"/>
         <pin num="28" name="~INT" type="output"/>
+        <pin num="29" name="PAD" type="input"/>
       </pins>
     </libpart>
     <libpart lib="opto" part="FODM3011">
@@ -955,6 +1225,26 @@
         <pin num="4" name="~" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="pizero-poe-cache" part="H2019FNL">
+      <fields>
+        <field name="Reference">T</field>
+        <field name="Value">H2019FNL</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TD+" type="passive"/>
+        <pin num="2" name="TDCT" type="passive"/>
+        <pin num="3" name="TD-" type="passive"/>
+        <pin num="6" name="RD+" type="passive"/>
+        <pin num="7" name="RDCT" type="passive"/>
+        <pin num="8" name="RD-" type="passive"/>
+        <pin num="9" name="RX-" type="passive"/>
+        <pin num="10" name="RXCT" type="passive"/>
+        <pin num="11" name="RX+" type="passive"/>
+        <pin num="14" name="TX-" type="passive"/>
+        <pin num="15" name="TXCT" type="passive"/>
+        <pin num="16" name="TX+" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="device" part="INDUCTOR">
       <fields>
         <field name="Reference">L</field>
@@ -963,36 +1253,6 @@
       <pins>
         <pin num="1" name="1" type="passive"/>
         <pin num="2" name="2" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="device" part="LED">
-      <footprints>
-        <fp>LED-3MM</fp>
-        <fp>LED-5MM</fp>
-        <fp>LED-10MM</fp>
-        <fp>LED-0603</fp>
-        <fp>LED-0805</fp>
-        <fp>LED-1206</fp>
-        <fp>LEDV</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">D</field>
-        <field name="Value">LED</field>
-      </fields>
-      <pins>
-        <pin num="1" name="K" type="passive"/>
-        <pin num="2" name="A" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="lm1117" part="LM1117IMPX-ADJ">
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">LM1117IMPX-ADJ</field>
-      </fields>
-      <pins>
-        <pin num="1" name="ADJ/GND" type="input"/>
-        <pin num="2" name="VOUT" type="input"/>
-        <pin num="3" name="VIN" type="input"/>
       </pins>
     </libpart>
     <libpart lib="ltc4267" part="LTC4267">
@@ -1018,6 +1278,21 @@
         <pin num="16" name="PGND" type="power_in"/>
       </pins>
     </libpart>
+    <libpart lib="device" part="Led_Small">
+      <description>Led</description>
+      <footprints>
+        <fp>CP*</fp>
+        <fp>SM*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">Led_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="pizero-poe-cache" part="POE_TRANS">
       <fields>
         <field name="Reference">T</field>
@@ -1032,24 +1307,16 @@
         <pin num="10" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="pulse_h1197" part="PULSE_H1197">
+    <libpart lib="device" part="Q_PMOS_GSD">
+      <description>Transistor P-MOSFET (general)</description>
       <fields>
-        <field name="Reference">T</field>
-        <field name="Value">PULSE_H1197</field>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_PMOS_GSD</field>
       </fields>
       <pins>
-        <pin num="1" name="PR1" type="passive"/>
-        <pin num="2" name="PM" type="passive"/>
-        <pin num="3" name="PR2" type="passive"/>
-        <pin num="6" name="PR1" type="passive"/>
-        <pin num="7" name="PM" type="passive"/>
-        <pin num="8" name="PR2" type="passive"/>
-        <pin num="9" name="S1" type="passive"/>
-        <pin num="10" name="~" type="input"/>
-        <pin num="11" name="S2" type="passive"/>
-        <pin num="14" name="S1" type="passive"/>
-        <pin num="15" name="~" type="input"/>
-        <pin num="16" name="S2" type="passive"/>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="device" part="R">
@@ -1087,56 +1354,22 @@
         <pin num="12" name="LED2+" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="pizero-poe-cache" part="Raspberry_Pi_+_Conn">
+    <libpart lib="device" part="R_Small">
+      <description>Resistor</description>
+      <footprints>
+        <fp>Resistor_*</fp>
+        <fp>R_*</fp>
+      </footprints>
       <fields>
-        <field name="Reference">P</field>
-        <field name="Value">Raspberry_Pi_+_Conn</field>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
       </fields>
       <pins>
-        <pin num="1" name="VDD_(3.3v)" type="input"/>
-        <pin num="2" name="VPP_(5v)" type="input"/>
-        <pin num="3" name="GPIO2/I2C1_SDA" type="input"/>
-        <pin num="4" name="VPP_(5v)" type="input"/>
-        <pin num="5" name="GPIO3/I2C1_SCL" type="input"/>
-        <pin num="6" name="GND" type="input"/>
-        <pin num="7" name="GPIO4/GPCLK0" type="input"/>
-        <pin num="8" name="GPIO14/UART_TXD" type="input"/>
-        <pin num="9" name="GND" type="input"/>
-        <pin num="10" name="GPIO15/UART_RXD" type="input"/>
-        <pin num="11" name="GPIO17" type="input"/>
-        <pin num="12" name="GPIO18" type="input"/>
-        <pin num="13" name="GPIO27" type="input"/>
-        <pin num="14" name="GND" type="input"/>
-        <pin num="15" name="GPIO22" type="input"/>
-        <pin num="16" name="GPIO23" type="input"/>
-        <pin num="17" name="VDD_(3.3V)" type="input"/>
-        <pin num="18" name="GPIO24" type="input"/>
-        <pin num="19" name="GPIO10/SPI_M0SI" type="input"/>
-        <pin num="20" name="GND" type="input"/>
-        <pin num="21" name="GPIO9/SPI_MISO" type="input"/>
-        <pin num="22" name="GPIO25" type="input"/>
-        <pin num="23" name="GPIO11/SPI_SCLK" type="input"/>
-        <pin num="24" name="GPIO8/SPI_CE0" type="input"/>
-        <pin num="25" name="GND" type="input"/>
-        <pin num="26" name="GPIO7/SPI_CE1" type="input"/>
-        <pin num="27" name="ID_SD" type="input"/>
-        <pin num="28" name="ID_SC" type="input"/>
-        <pin num="29" name="GPIO5" type="input"/>
-        <pin num="30" name="GND" type="input"/>
-        <pin num="31" name="GPIO6" type="input"/>
-        <pin num="32" name="GPIO12" type="input"/>
-        <pin num="33" name="GPIO13" type="input"/>
-        <pin num="34" name="GND" type="input"/>
-        <pin num="35" name="GPIO19" type="input"/>
-        <pin num="36" name="GPIO16" type="input"/>
-        <pin num="37" name="GPIO26" type="input"/>
-        <pin num="39" name="GND" type="input"/>
-        <pin num="40" name="GPIO21" type="input"/>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="w_transistor" part="SI3440DV">
-      <description>Si3440DV N channel 150V MOSFET</description>
-      <docs>/home/walter/Documenti/Elettronica/DATA_SHEET/Elettronici/Discreti/Transistor/MOS/N-channel/VSH_SI3440DV.pdf</docs>
+    <libpart lib="pizero-poe-cache" part="SI3440DV">
       <footprints>
         <fp>tsot-6</fp>
       </footprints>
@@ -1151,6 +1384,16 @@
         <pin num="4" name="S" type="passive"/>
         <pin num="5" name="D" type="passive"/>
         <pin num="6" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="TEST_1P">
+      <description>point</description>
+      <fields>
+        <field name="Reference">W</field>
+        <field name="Value">TEST_1P</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="pizero-poe-cache" part="VOLTAGE_REF">
@@ -1180,476 +1423,492 @@
         <pin num="2" name="A" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="pizero-poe-cache" part="hole-metalized-no4">
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">hole-metalized-no4</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="input"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
-    <library logical="w_device">
-      <uri>/home/mangokid/kicad_libs/library/w_device.lib</uri>
-    </library>
-    <library logical="w_transistor">
-      <uri>/home/mangokid/kicad_libs/library/w_transistor.lib</uri>
-    </library>
-    <library logical="pulse_h1197">
-      <uri>/home/mangokid/openfet/pizero-poe/poepi-hardware/ws2812-controller/project-libs/pulse_h1197.lib</uri>
-    </library>
-    <library logical="lm1117">
-      <uri>/home/mangokid/openfet/pizero-poe/poepi-hardware/ws2812-controller/project-libs/lm1117.lib</uri>
-    </library>
-    <library logical="pizero-poe-cache">
-      <uri>/home/mangokid/openfet/pizero-poe/poepi-hardware/ws2812-controller/pizero-poe-cache.lib</uri>
-    </library>
     <library logical="device">
-      <uri>/usr/share/kicad/library/device.lib</uri>
-    </library>
-    <library logical="opto">
-      <uri>/usr/share/kicad/library/opto.lib</uri>
+      <uri>/Library/Application Support/kicad/library/device.lib</uri>
     </library>
     <library logical="conn">
-      <uri>/usr/share/kicad/library/conn.lib</uri>
+      <uri>/Library/Application Support/kicad/library/conn.lib</uri>
     </library>
-    <library logical="ltc4267">
-      <uri>/home/mangokid/openfet/pizero-poe/poepi-hardware/ws2812-controller/project-libs/ltc4267.lib</uri>
+    <library logical="memory">
+      <uri>/Library/Application Support/kicad/library/memory.lib</uri>
     </library>
     <library logical="microchip">
-      <uri>/usr/share/kicad/library/microchip.lib</uri>
+      <uri>/Library/Application Support/kicad/library/microchip.lib</uri>
     </library>
-    <library logical="transistors">
-      <uri>/usr/share/kicad/library/transistors.lib</uri>
+    <library logical="opto">
+      <uri>/Library/Application Support/kicad/library/opto.lib</uri>
+    </library>
+    <library logical="pizero-poe-cache">
+      <uri>/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/pizero-poe-cache.lib</uri>
+    </library>
+    <library logical="ltc4267">
+      <uri>/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/project-libs/ltc4267.lib</uri>
     </library>
   </libraries>
   <nets>
-    <net code="1" name="Net-(IC1-Pad6)">
+    <net code="1" name="GND">
+      <node ref="P2" pin="6"/>
+      <node ref="C3" pin="1"/>
+      <node ref="C2" pin="1"/>
+      <node ref="R24" pin="2"/>
+      <node ref="U3" pin="4"/>
+      <node ref="U3" pin="3"/>
+      <node ref="U3" pin="2"/>
+      <node ref="U3" pin="1"/>
+      <node ref="P2" pin="39"/>
+      <node ref="C16" pin="2"/>
+      <node ref="C15" pin="2"/>
+      <node ref="R13" pin="2"/>
+      <node ref="C21" pin="2"/>
+      <node ref="C18" pin="1"/>
+      <node ref="T3" pin="2"/>
+      <node ref="T2" pin="10"/>
+      <node ref="T2" pin="9"/>
+      <node ref="C20" pin="2"/>
+      <node ref="W1" pin="1"/>
+      <node ref="IC1" pin="26"/>
+      <node ref="IC1" pin="14"/>
+      <node ref="IC1" pin="7"/>
+      <node ref="C10" pin="2"/>
+      <node ref="C9" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="IC1" pin="29"/>
+      <node ref="IC1" pin="18"/>
+      <node ref="IC1" pin="17"/>
+      <node ref="R15" pin="2"/>
+      <node ref="R19" pin="2"/>
+      <node ref="U4" pin="2"/>
+      <node ref="C19" pin="2"/>
+      <node ref="C12" pin="2"/>
+      <node ref="R12" pin="2"/>
+      <node ref="R8" pin="1"/>
+      <node ref="C11" pin="1"/>
+      <node ref="P2" pin="14"/>
+      <node ref="P2" pin="30"/>
+      <node ref="P2" pin="20"/>
+      <node ref="P2" pin="9"/>
+      <node ref="C13" pin="1"/>
+      <node ref="C17" pin="2"/>
+      <node ref="P2" pin="34"/>
+      <node ref="P2" pin="25"/>
+    </net>
+    <net code="2" name="/DATA_PAIR_2">
+      <node ref="T1" pin="15"/>
+      <node ref="D1" pin="2"/>
+    </net>
+    <net code="3" name="/GPIO10_MOSI">
+      <node ref="IC1" pin="3"/>
+      <node ref="P2" pin="19"/>
+    </net>
+    <net code="4" name="/GPIO9_MISO">
+      <node ref="P2" pin="21"/>
+      <node ref="IC1" pin="2"/>
+    </net>
+    <net code="5" name="/GPIO11_SCLK">
+      <node ref="P2" pin="23"/>
+      <node ref="IC1" pin="4"/>
+    </net>
+    <net code="6" name="/GPIO8_CE0#">
+      <node ref="P2" pin="24"/>
+      <node ref="IC1" pin="5"/>
+    </net>
+    <net code="7" name="/GPIO25">
+      <node ref="IC1" pin="28"/>
+      <node ref="P2" pin="22"/>
+    </net>
+    <net code="8" name="Net-(IC1-Pad6)">
       <node ref="IC1" pin="6"/>
       <node ref="R3" pin="1"/>
     </net>
-    <net code="2" name="Net-(C3-Pad2)">
-      <node ref="Y1" pin="2"/>
-      <node ref="IC1" pin="20"/>
-      <node ref="C3" pin="2"/>
-    </net>
-    <net code="3" name="/ENC_SI">
-      <node ref="IC1" pin="3"/>
-      <node ref="P1" pin="19"/>
-    </net>
-    <net code="4" name="/ENC_SO">
-      <node ref="IC1" pin="2"/>
-      <node ref="P1" pin="21"/>
-    </net>
-    <net code="5" name="/ENC_SCK">
-      <node ref="P1" pin="23"/>
-      <node ref="IC1" pin="4"/>
-    </net>
-    <net code="6" name="/ENC_CS">
-      <node ref="IC1" pin="5"/>
-      <node ref="P1" pin="24"/>
-    </net>
-    <net code="7" name="/ENC_INT">
-      <node ref="P1" pin="22"/>
-      <node ref="IC1" pin="28"/>
-    </net>
-    <net code="8" name="/ENC_WOL">
-      <node ref="IC1" pin="1"/>
-    </net>
-    <net code="9" name="/LEDA_CATH">
-      <node ref="J1" pin="9"/>
+    <net code="9" name="/LEDA_K">
       <node ref="IC1" pin="23"/>
+      <node ref="J1" pin="9"/>
     </net>
-    <net code="10" name="/LEDB_CATH">
-      <node ref="J1" pin="11"/>
+    <net code="10" name="/LEDB_K">
       <node ref="IC1" pin="22"/>
+      <node ref="J1" pin="11"/>
     </net>
-    <net code="11" name="Net-(C11-Pad2)">
-      <node ref="IC1" pin="25"/>
-      <node ref="C11" pin="2"/>
+    <net code="11" name="/SPARE_PAIR_1">
+      <node ref="D2" pin="3"/>
+      <node ref="J1" pin="5"/>
+      <node ref="J1" pin="6"/>
     </net>
-    <net code="12" name="Net-(C2-Pad2)">
-      <node ref="C2" pin="2"/>
-      <node ref="Y1" pin="1"/>
-      <node ref="IC1" pin="19"/>
+    <net code="12" name="/SPARE_PAIR_2">
+      <node ref="J1" pin="7"/>
+      <node ref="D2" pin="2"/>
+      <node ref="J1" pin="8"/>
     </net>
-    <net code="13" name="Net-(R13-Pad1)">
-      <node ref="U3" pin="1"/>
-      <node ref="R13" pin="1"/>
-      <node ref="R15" pin="2"/>
+    <net code="13" name="Net-(D5-Pad2)">
+      <node ref="D5" pin="2"/>
+      <node ref="T2" pin="8"/>
+      <node ref="T2" pin="7"/>
     </net>
-    <net code="14" name="Net-(IC1-Pad10)">
-      <node ref="IC1" pin="10"/>
-      <node ref="R8" pin="2"/>
+    <net code="14" name="/POE_FB_DIV">
+      <node ref="R10" pin="1"/>
+      <node ref="R11" pin="2"/>
+      <node ref="R12" pin="1"/>
+      <node ref="T3" pin="1"/>
     </net>
-    <net code="15" name="Net-(Q1-Pad3)">
-      <node ref="U1" pin="3"/>
-      <node ref="Q1" pin="3"/>
+    <net code="15" name="/TPOUT+">
+      <node ref="R14" pin="2"/>
+      <node ref="T1" pin="1"/>
+      <node ref="IC1" pin="13"/>
     </net>
-    <net code="16" name="Net-(Q1-Pad1)">
-      <node ref="T2" pin="4"/>
-      <node ref="R5" pin="1"/>
+    <net code="16" name="/TPOUT-">
+      <node ref="T1" pin="3"/>
+      <node ref="R16" pin="2"/>
+      <node ref="IC1" pin="12"/>
+    </net>
+    <net code="17" name="GNDPWR">
+      <node ref="U1" pin="1"/>
+      <node ref="U1" pin="8"/>
+      <node ref="C4" pin="2"/>
+      <node ref="R6" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="U1" pin="16"/>
+      <node ref="U1" pin="15"/>
+      <node ref="U1" pin="10"/>
+      <node ref="U2" pin="3"/>
+      <node ref="U1" pin="9"/>
+      <node ref="C22" pin="2"/>
+      <node ref="C23" pin="2"/>
+      <node ref="C25" pin="2"/>
+      <node ref="C24" pin="2"/>
+      <node ref="C13" pin="2"/>
+    </net>
+    <net code="18" name="/POE_SW_D">
       <node ref="Q1" pin="2"/>
       <node ref="Q1" pin="1"/>
       <node ref="Q1" pin="5"/>
       <node ref="Q1" pin="6"/>
+      <node ref="T2" pin="4"/>
     </net>
-    <net code="17" name="Net-(Q1-Pad4)">
-      <node ref="Q1" pin="4"/>
-      <node ref="R4" pin="1"/>
-      <node ref="R6" pin="1"/>
+    <net code="19" name="Net-(Q1-Pad3)">
+      <node ref="U1" pin="3"/>
+      <node ref="Q1" pin="3"/>
     </net>
-    <net code="18" name="Net-(R1-Pad1)">
+    <net code="20" name="Net-(R1-Pad1)">
       <node ref="R1" pin="1"/>
       <node ref="U1" pin="5"/>
     </net>
-    <net code="19" name="GNDPWR">
-      <node ref="U1" pin="1"/>
-      <node ref="U1" pin="8"/>
-      <node ref="U1" pin="9"/>
-      <node ref="U1" pin="10"/>
-      <node ref="U1" pin="15"/>
-      <node ref="U1" pin="16"/>
-      <node ref="C22" pin="2"/>
-      <node ref="C13" pin="2"/>
-      <node ref="U2" pin="3"/>
-      <node ref="C4" pin="2"/>
-      <node ref="R6" pin="2"/>
-      <node ref="C5" pin="2"/>
-    </net>
-    <net code="20" name="Net-(C6-Pad2)">
-      <node ref="C6" pin="2"/>
-      <node ref="R5" pin="2"/>
-    </net>
-    <net code="21" name="/RUN">
+    <net code="21" name="/POE_RUN">
+      <node ref="R7" pin="2"/>
       <node ref="D4" pin="2"/>
       <node ref="U2" pin="4"/>
-      <node ref="R7" pin="2"/>
     </net>
-    <net code="22" name="/PVCC">
-      <node ref="R7" pin="1"/>
-      <node ref="R2" pin="2"/>
-      <node ref="C4" pin="1"/>
-      <node ref="U1" pin="4"/>
-    </net>
-    <net code="23" name="Net-(D4-Pad1)">
-      <node ref="D4" pin="1"/>
+    <net code="22" name="Net-(D4-Pad1)">
       <node ref="U1" pin="2"/>
+      <node ref="D4" pin="1"/>
     </net>
-    <net code="24" name="Net-(R9-Pad2)">
-      <node ref="R9" pin="2"/>
-      <node ref="U2" pin="1"/>
+    <net code="23" name="Net-(IC1-Pad10)">
+      <node ref="IC1" pin="10"/>
+      <node ref="R8" pin="2"/>
     </net>
-    <net code="25" name="Net-(R4-Pad2)">
-      <node ref="R4" pin="2"/>
-      <node ref="U1" pin="14"/>
+    <net code="24" name="Net-(C11-Pad2)">
+      <node ref="IC1" pin="25"/>
+      <node ref="C11" pin="2"/>
+    </net>
+    <net code="25" name="+5V">
+      <node ref="R11" pin="1"/>
+      <node ref="C15" pin="1"/>
+      <node ref="Q2" pin="1"/>
+      <node ref="Q3" pin="3"/>
+      <node ref="R9" pin="1"/>
+      <node ref="D5" pin="1"/>
+      <node ref="C12" pin="1"/>
+      <node ref="D6" pin="2"/>
+      <node ref="C16" pin="1"/>
     </net>
     <net code="26" name="Net-(C14-Pad2)">
       <node ref="C14" pin="2"/>
       <node ref="R10" pin="2"/>
     </net>
-    <net code="27" name="Net-(R10-Pad1)">
-      <node ref="T3" pin="1"/>
-      <node ref="R12" pin="1"/>
-      <node ref="R11" pin="2"/>
-      <node ref="R10" pin="1"/>
+    <net code="27" name="/~POE_PWRGD">
+      <node ref="U1" pin="11"/>
+      <node ref="R5" pin="2"/>
     </net>
-    <net code="28" name="Net-(C14-Pad1)">
-      <node ref="C14" pin="1"/>
+    <net code="28" name="/POE_FB_A">
+      <node ref="R9" pin="2"/>
+      <node ref="U2" pin="1"/>
+    </net>
+    <net code="29" name="/POE_FB_K">
       <node ref="U2" pin="2"/>
+      <node ref="C14" pin="1"/>
       <node ref="T3" pin="3"/>
     </net>
-    <net code="29" name="GND">
-      <node ref="R8" pin="1"/>
-      <node ref="R13" pin="2"/>
-      <node ref="C11" pin="1"/>
-      <node ref="C20" pin="2"/>
-      <node ref="R20" pin="2"/>
-      <node ref="R19" pin="2"/>
-      <node ref="R18" pin="2"/>
-      <node ref="IC1" pin="26"/>
-      <node ref="IC1" pin="17"/>
-      <node ref="IC1" pin="18"/>
-      <node ref="C2" pin="1"/>
-      <node ref="C3" pin="1"/>
-      <node ref="C12" pin="2"/>
-      <node ref="C13" pin="1"/>
-      <node ref="R12" pin="2"/>
-      <node ref="C17" pin="2"/>
-      <node ref="P1" pin="20"/>
-      <node ref="P1" pin="9"/>
-      <node ref="P1" pin="6"/>
-      <node ref="P1" pin="30"/>
-      <node ref="P1" pin="39"/>
-      <node ref="P1" pin="14"/>
-      <node ref="P1" pin="25"/>
-      <node ref="P1" pin="34"/>
-      <node ref="IC1" pin="7"/>
-      <node ref="C19" pin="2"/>
-      <node ref="T3" pin="2"/>
-      <node ref="IC1" pin="14"/>
-      <node ref="T2" pin="10"/>
-      <node ref="T2" pin="9"/>
-      <node ref="C7" pin="2"/>
-      <node ref="C8" pin="2"/>
-      <node ref="C9" pin="2"/>
-      <node ref="C10" pin="2"/>
-      <node ref="C16" pin="2"/>
-      <node ref="C21" pin="2"/>
-      <node ref="C18" pin="1"/>
-      <node ref="D7" pin="1"/>
-      <node ref="P2" pin="3"/>
-      <node ref="P3" pin="3"/>
-      <node ref="C15" pin="2"/>
+    <net code="30" name="/LEDA_A">
+      <node ref="R22" pin="1"/>
+      <node ref="J1" pin="10"/>
     </net>
-    <net code="30" name="+5V">
-      <node ref="R11" pin="1"/>
-      <node ref="U5" pin="6"/>
-      <node ref="Q2" pin="3"/>
-      <node ref="P3" pin="1"/>
-      <node ref="U3" pin="3"/>
-      <node ref="P2" pin="1"/>
-      <node ref="C16" pin="1"/>
-      <node ref="C17" pin="1"/>
-      <node ref="R24" pin="1"/>
-      <node ref="C15" pin="1"/>
-      <node ref="R9" pin="1"/>
-      <node ref="D5" pin="1"/>
-      <node ref="C12" pin="1"/>
+    <net code="31" name="/LEDB_A">
+      <node ref="R21" pin="1"/>
+      <node ref="J1" pin="12"/>
     </net>
-    <net code="31" name="/sheet56B34F8B/5V_MCU">
-      <node ref="P1" pin="2"/>
-      <node ref="P1" pin="4"/>
-      <node ref="U5" pin="5"/>
-      <node ref="Q2" pin="2"/>
-    </net>
-    <net code="32" name="+3V3">
-      <node ref="R21" pin="2"/>
-      <node ref="R22" pin="2"/>
-      <node ref="R23" pin="1"/>
-      <node ref="IC1" pin="15"/>
-      <node ref="IC1" pin="16"/>
-      <node ref="IC1" pin="24"/>
-      <node ref="C10" pin="1"/>
-      <node ref="D6" pin="1"/>
+    <net code="32" name="Net-(Q2-Pad5)">
+      <node ref="Q2" pin="6"/>
+      <node ref="Q2" pin="5"/>
       <node ref="R15" pin="1"/>
-      <node ref="U3" pin="2"/>
-      <node ref="C19" pin="1"/>
-      <node ref="C20" pin="1"/>
-      <node ref="R3" pin="2"/>
-      <node ref="L2" pin="2"/>
-      <node ref="IC1" pin="21"/>
-      <node ref="C8" pin="1"/>
-      <node ref="C7" pin="1"/>
-      <node ref="IC1" pin="11"/>
-      <node ref="C9" pin="1"/>
     </net>
-    <net code="33" name="Net-(C18-Pad2)">
-      <node ref="L2" pin="1"/>
-      <node ref="R16" pin="1"/>
+    <net code="33" name="Net-(Q2-Pad4)">
+      <node ref="R19" pin="1"/>
+      <node ref="Q2" pin="4"/>
+      <node ref="Q3" pin="1"/>
+    </net>
+    <net code="34" name="Net-(D6-Pad1)">
+      <node ref="D6" pin="1"/>
+      <node ref="R13" pin="1"/>
+    </net>
+    <net code="35" name="Net-(D7-Pad1)">
+      <node ref="D7" pin="1"/>
+      <node ref="R24" pin="1"/>
+    </net>
+    <net code="36" name="Net-(C18-Pad2)">
+      <node ref="C18" pin="2"/>
       <node ref="T1" pin="2"/>
       <node ref="R14" pin="1"/>
-      <node ref="C18" pin="2"/>
+      <node ref="R16" pin="1"/>
+      <node ref="L2" pin="1"/>
     </net>
-    <net code="34" name="Net-(C21-Pad1)">
+    <net code="37" name="Net-(T1-Pad7)">
+      <node ref="T1" pin="7"/>
+    </net>
+    <net code="38" name="/TPIN_T-">
+      <node ref="J1" pin="4"/>
+      <node ref="T1" pin="9"/>
+    </net>
+    <net code="39" name="/DATA_PAIR_1">
+      <node ref="T1" pin="10"/>
+      <node ref="D1" pin="3"/>
+    </net>
+    <net code="40" name="/TPIN_T+">
+      <node ref="T1" pin="11"/>
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="41" name="/TPOUT_T-">
+      <node ref="J1" pin="2"/>
+      <node ref="T1" pin="14"/>
+    </net>
+    <net code="42" name="/TPOUT_T+">
+      <node ref="T1" pin="16"/>
+      <node ref="J1" pin="1"/>
+    </net>
+    <net code="43" name="/PHY_OSC1">
+      <node ref="Y1" pin="1"/>
+      <node ref="IC1" pin="19"/>
+      <node ref="C2" pin="2"/>
+    </net>
+    <net code="44" name="/PHY_OSC2">
+      <node ref="C3" pin="2"/>
+      <node ref="Y1" pin="2"/>
+      <node ref="IC1" pin="20"/>
+    </net>
+    <net code="45" name="/POE_PVCC">
+      <node ref="R2" pin="2"/>
+      <node ref="C4" pin="1"/>
+      <node ref="C25" pin="1"/>
+      <node ref="U1" pin="4"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="46" name="Net-(D8-Pad1)">
+      <node ref="D8" pin="1"/>
+      <node ref="R5" pin="1"/>
+    </net>
+    <net code="47" name="Net-(C21-Pad1)">
       <node ref="R26" pin="1"/>
       <node ref="R17" pin="1"/>
       <node ref="C21" pin="1"/>
     </net>
-    <net code="35" name="Net-(D6-Pad2)">
-      <node ref="R18" pin="1"/>
-      <node ref="D6" pin="2"/>
-    </net>
-    <net code="36" name="Net-(D7-Pad2)">
-      <node ref="Q3" pin="3"/>
-      <node ref="D7" pin="2"/>
-      <node ref="R25" pin="2"/>
-      <node ref="R24" pin="2"/>
-    </net>
-    <net code="38" name="/WS2812_DO">
-      <node ref="P1" pin="7"/>
-      <node ref="Q3" pin="2"/>
-      <node ref="Q3" pin="1"/>
-      <node ref="R23" pin="2"/>
-    </net>
-    <net code="39" name="Net-(P2-Pad2)">
-      <node ref="P2" pin="2"/>
-      <node ref="P3" pin="2"/>
-      <node ref="R25" pin="1"/>
-    </net>
-    <net code="40" name="Net-(J1-Pad12)">
-      <node ref="R21" pin="1"/>
-      <node ref="J1" pin="12"/>
-    </net>
-    <net code="41" name="Net-(J1-Pad10)">
-      <node ref="R22" pin="1"/>
-      <node ref="J1" pin="10"/>
-    </net>
-    <net code="42" name="Net-(J1-Pad1)">
-      <node ref="T1" pin="16"/>
-      <node ref="J1" pin="1"/>
-    </net>
-    <net code="43" name="Net-(J1-Pad2)">
-      <node ref="T1" pin="14"/>
-      <node ref="J1" pin="2"/>
-    </net>
-    <net code="44" name="Net-(J1-Pad3)">
-      <node ref="J1" pin="3"/>
-      <node ref="T1" pin="11"/>
-    </net>
-    <net code="45" name="Net-(J1-Pad4)">
-      <node ref="J1" pin="4"/>
-      <node ref="T1" pin="9"/>
-    </net>
-    <net code="46" name="Net-(D5-Pad2)">
-      <node ref="D5" pin="2"/>
-      <node ref="T2" pin="8"/>
-      <node ref="T2" pin="7"/>
-    </net>
-    <net code="47" name="/TPOUT+">
-      <node ref="R14" pin="2"/>
-      <node ref="IC1" pin="13"/>
-      <node ref="T1" pin="1"/>
-    </net>
-    <net code="48" name="Net-(IC1-Pad27)">
-      <node ref="IC1" pin="27"/>
-    </net>
-    <net code="49" name="/TPIN+">
-      <node ref="R17" pin="2"/>
-      <node ref="T1" pin="6"/>
+    <net code="48" name="/TPIN+">
       <node ref="IC1" pin="9"/>
+      <node ref="T1" pin="6"/>
+      <node ref="R17" pin="2"/>
     </net>
-    <net code="50" name="/TPIN-">
+    <net code="49" name="/TPIN-">
+      <node ref="T1" pin="8"/>
       <node ref="R26" pin="2"/>
       <node ref="IC1" pin="8"/>
-      <node ref="T1" pin="8"/>
     </net>
-    <net code="51" name="/TPOUT-">
-      <node ref="T1" pin="3"/>
-      <node ref="R16" pin="2"/>
-      <node ref="IC1" pin="12"/>
+    <net code="50" name="/POE_VPORTP">
+      <node ref="C23" pin="1"/>
+      <node ref="D8" pin="2"/>
+      <node ref="C24" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="R2" pin="1"/>
+      <node ref="L1" pin="2"/>
+      <node ref="T2" pin="3"/>
+      <node ref="U1" pin="13"/>
+      <node ref="C22" pin="1"/>
     </net>
-    <net code="52" name="Net-(C1-Pad2)">
+    <net code="51" name="Net-(R18-Pad2)">
+      <node ref="R18" pin="2"/>
+      <node ref="W2" pin="1"/>
+      <node ref="U3" pin="7"/>
+    </net>
+    <net code="52" name="+3V3">
+      <node ref="D7" pin="2"/>
+      <node ref="IC1" pin="11"/>
+      <node ref="IC1" pin="21"/>
+      <node ref="U4" pin="5"/>
+      <node ref="C20" pin="1"/>
+      <node ref="IC1" pin="24"/>
+      <node ref="IC1" pin="15"/>
+      <node ref="C17" pin="1"/>
+      <node ref="U3" pin="8"/>
+      <node ref="IC1" pin="16"/>
+      <node ref="R18" pin="1"/>
+      <node ref="R20" pin="1"/>
+      <node ref="R23" pin="1"/>
+      <node ref="C7" pin="1"/>
+      <node ref="C8" pin="1"/>
+      <node ref="C9" pin="1"/>
+      <node ref="C10" pin="1"/>
+      <node ref="R3" pin="2"/>
+      <node ref="R22" pin="2"/>
+      <node ref="R21" pin="2"/>
+      <node ref="L2" pin="2"/>
+    </net>
+    <net code="53" name="/POE_VPORTP_L">
+      <node ref="D1" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="D3" pin="1"/>
+      <node ref="L1" pin="1"/>
+      <node ref="D2" pin="1"/>
+    </net>
+    <net code="54" name="/POE_VPORTN">
+      <node ref="D2" pin="4"/>
+      <node ref="U1" pin="7"/>
+      <node ref="U1" pin="12"/>
       <node ref="R1" pin="2"/>
       <node ref="D3" pin="2"/>
       <node ref="C1" pin="2"/>
-      <node ref="D2" pin="4"/>
       <node ref="D1" pin="4"/>
-      <node ref="U1" pin="12"/>
-      <node ref="U1" pin="7"/>
     </net>
-    <net code="53" name="Net-(C1-Pad1)">
-      <node ref="C1" pin="1"/>
-      <node ref="D3" pin="1"/>
-      <node ref="D2" pin="1"/>
-      <node ref="D1" pin="1"/>
-      <node ref="L1" pin="1"/>
+    <net code="55" name="Net-(H3-Pad1)">
+      <node ref="H3" pin="1"/>
     </net>
-    <net code="54" name="Net-(U1-Pad11)">
-      <node ref="U1" pin="11"/>
+    <net code="56" name="Net-(H1-Pad1)">
+      <node ref="H1" pin="1"/>
     </net>
-    <net code="55" name="Net-(C22-Pad1)">
-      <node ref="C5" pin="1"/>
-      <node ref="C6" pin="1"/>
-      <node ref="T2" pin="3"/>
-      <node ref="C22" pin="1"/>
-      <node ref="R2" pin="1"/>
-      <node ref="U1" pin="13"/>
-      <node ref="L1" pin="2"/>
+    <net code="57" name="Net-(H2-Pad1)">
+      <node ref="H2" pin="1"/>
     </net>
-    <net code="56" name="/DATA_PAIR_1">
-      <node ref="T1" pin="10"/>
-      <node ref="D1" pin="3"/>
+    <net code="58" name="Net-(H4-Pad1)">
+      <node ref="H4" pin="1"/>
     </net>
-    <net code="57" name="/DATA_PAIR_2">
-      <node ref="T1" pin="15"/>
-      <node ref="D1" pin="2"/>
+    <net code="59" name="Net-(IC1-Pad27)">
+      <node ref="IC1" pin="27"/>
     </net>
-    <net code="58" name="/SPARE_PAIR_2">
-      <node ref="J1" pin="8"/>
-      <node ref="J1" pin="7"/>
-      <node ref="D2" pin="2"/>
+    <net code="60" name="Net-(IC1-Pad1)">
+      <node ref="IC1" pin="1"/>
     </net>
-    <net code="59" name="/SPARE_PAIR_1">
-      <node ref="J1" pin="6"/>
-      <node ref="J1" pin="5"/>
-      <node ref="D2" pin="3"/>
+    <net code="61" name="/RPI_VBUS">
+      <node ref="P2" pin="2"/>
+      <node ref="P2" pin="4"/>
+      <node ref="Q2" pin="3"/>
+      <node ref="Q3" pin="2"/>
+      <node ref="U4" pin="1"/>
+      <node ref="U4" pin="3"/>
+      <node ref="C19" pin="1"/>
     </net>
-    <net code="60" name="Net-(P1-Pad1)">
-      <node ref="P1" pin="1"/>
+    <net code="62" name="/POW_SW_S">
+      <node ref="R6" pin="1"/>
+      <node ref="Q1" pin="4"/>
+      <node ref="R4" pin="1"/>
     </net>
-    <net code="62" name="Net-(P1-Pad15)">
-      <node ref="P1" pin="15"/>
+    <net code="63" name="/POE_SW_SENSE">
+      <node ref="R4" pin="2"/>
+      <node ref="U1" pin="14"/>
     </net>
-    <net code="63" name="Net-(P1-Pad35)">
-      <node ref="P1" pin="35"/>
+    <net code="64" name="/GPIO7_CE1#">
+      <node ref="P2" pin="26"/>
     </net>
-    <net code="64" name="Net-(P1-Pad16)">
-      <node ref="P1" pin="16"/>
+    <net code="65" name="/GPIO0_ID_SD">
+      <node ref="U3" pin="5"/>
+      <node ref="P2" pin="27"/>
+      <node ref="R20" pin="2"/>
     </net>
-    <net code="65" name="Net-(P1-Pad26)">
-      <node ref="P1" pin="26"/>
+    <net code="66" name="/GPIO5">
+      <node ref="P2" pin="29"/>
     </net>
-    <net code="66" name="Net-(P1-Pad36)">
-      <node ref="P1" pin="36"/>
+    <net code="67" name="/GPIO6">
+      <node ref="P2" pin="31"/>
     </net>
-    <net code="67" name="Net-(P1-Pad17)">
-      <node ref="P1" pin="17"/>
+    <net code="68" name="/GPIO13">
+      <node ref="P2" pin="33"/>
     </net>
-    <net code="68" name="Net-(P1-Pad27)">
-      <node ref="P1" pin="27"/>
+    <net code="69" name="/GPIO19">
+      <node ref="P2" pin="35"/>
     </net>
-    <net code="69" name="Net-(P1-Pad37)">
-      <node ref="P1" pin="37"/>
+    <net code="70" name="/GPIO26">
+      <node ref="P2" pin="37"/>
     </net>
-    <net code="70" name="Net-(P1-Pad18)">
-      <node ref="P1" pin="18"/>
+    <net code="71" name="/GPIO21_SCLK">
+      <node ref="P2" pin="40"/>
     </net>
-    <net code="71" name="Net-(P1-Pad28)">
-      <node ref="P1" pin="28"/>
+    <net code="72" name="/GPIO20_MOSI">
+      <node ref="P2" pin="38"/>
     </net>
-    <net code="72" name="Net-(P1-Pad29)">
-      <node ref="P1" pin="29"/>
+    <net code="73" name="/GPIO16_CE2#">
+      <node ref="P2" pin="36"/>
     </net>
-    <net code="73" name="Net-(P1-Pad3)">
-      <node ref="P1" pin="3"/>
+    <net code="74" name="/GPIO12">
+      <node ref="P2" pin="32"/>
     </net>
-    <net code="74" name="Net-(P1-Pad5)">
-      <node ref="P1" pin="5"/>
+    <net code="75" name="/GPIO1_ID_SC">
+      <node ref="R23" pin="2"/>
+      <node ref="P2" pin="28"/>
+      <node ref="U3" pin="6"/>
     </net>
-    <net code="75" name="Net-(P1-Pad8)">
-      <node ref="P1" pin="8"/>
+    <net code="76" name="/RPI_3V3_1">
+      <node ref="P2" pin="1"/>
     </net>
-    <net code="76" name="Net-(P1-Pad10)">
-      <node ref="P1" pin="10"/>
+    <net code="77" name="/GPIO1_SDA1">
+      <node ref="P2" pin="3"/>
     </net>
-    <net code="77" name="Net-(P1-Pad40)">
-      <node ref="P1" pin="40"/>
+    <net code="78" name="/GPIO3_SCL1">
+      <node ref="P2" pin="5"/>
     </net>
-    <net code="78" name="Net-(P1-Pad11)">
-      <node ref="P1" pin="11"/>
+    <net code="79" name="/GPIO4">
+      <node ref="P2" pin="7"/>
     </net>
-    <net code="79" name="Net-(P1-Pad31)">
-      <node ref="P1" pin="31"/>
+    <net code="80" name="/GPIO17">
+      <node ref="P2" pin="11"/>
     </net>
-    <net code="80" name="Net-(P1-Pad12)">
-      <node ref="P1" pin="12"/>
+    <net code="81" name="/GPIO27">
+      <node ref="P2" pin="13"/>
     </net>
-    <net code="81" name="Net-(P1-Pad32)">
-      <node ref="P1" pin="32"/>
+    <net code="82" name="/GPIO22">
+      <node ref="P2" pin="15"/>
     </net>
-    <net code="82" name="Net-(P1-Pad13)">
-      <node ref="P1" pin="13"/>
+    <net code="83" name="/RPI_3V3_2">
+      <node ref="P2" pin="17"/>
     </net>
-    <net code="83" name="Net-(P1-Pad33)">
-      <node ref="P1" pin="33"/>
+    <net code="84" name="/GPIO14_TXD0">
+      <node ref="P2" pin="8"/>
     </net>
-    <net code="84" name="Net-(T1-Pad7)">
-      <node ref="T1" pin="7"/>
+    <net code="85" name="/GPIO15_RXD0">
+      <node ref="P2" pin="10"/>
     </net>
-    <net code="85" name="Net-(R19-Pad1)">
-      <node ref="U5" pin="3"/>
-      <node ref="R19" pin="1"/>
-      <node ref="U5" pin="2"/>
-      <node ref="U5" pin="1"/>
+    <net code="86" name="/GPIO18">
+      <node ref="P2" pin="12"/>
     </net>
-    <net code="86" name="Net-(Q2-Pad1)">
-      <node ref="U5" pin="4"/>
-      <node ref="R20" pin="1"/>
-      <node ref="Q2" pin="1"/>
+    <net code="87" name="/GPIO23">
+      <node ref="P2" pin="16"/>
+    </net>
+    <net code="88" name="/GPIO24">
+      <node ref="P2" pin="18"/>
     </net>
   </nets>
 </export>
