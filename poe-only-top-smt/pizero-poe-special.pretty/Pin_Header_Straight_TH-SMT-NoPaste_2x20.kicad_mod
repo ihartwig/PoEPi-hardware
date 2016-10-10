@@ -97,8 +97,8 @@
   (pad 30 smd rect (at 3.85 35.56) (size 1.68 0.889) (layers F.Cu F.Mask))
   (pad 28 smd rect (at 3.85 33.02) (size 1.68 0.889) (layers F.Cu F.Mask))
   (pad "" np_thru_hole circle (at 1.27 46.99) (size 1.78 1.78) (drill 1.78) (layers *.Cu))
-  (model Pin_Headers.3dshapes/Pin_Header_Straight_2x13.wrl
-    (at (xyz 0.05 -0.6 0))
+  (model Pin_Headers.3dshapes/Pin_Header_Straight_2x20.wrl
+    (at (xyz 0.05 -0.95 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 90))
   )
