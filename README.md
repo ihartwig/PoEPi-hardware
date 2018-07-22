@@ -1,3 +1,23 @@
+Raspberry Pi Zero PoE - PoEPi
+=============================
+
+This repository houses multiple designs for a PoE hat for RPi Zero that combines a 802.3af compliant controller with a 10Mbps ethernet controller/phy to provide power and connectivity over the same cable. The board shape matches RPi Zero, but this board should work on RPi 1/2/3 with 40-pin GPIO and the right headers. Footprints for the RPi Hat EEPROM are present but untested.
+
+<img width="500px" src="" alt="PoEPi 3D render"></img>
+
+## Features
+* 5V 12.95W 802.3af-compliant PoE with LTC4267
+* 10Mbps ethernet using ENC28J60 (includes Raspbian driver support)
+
+## Variations
+
+* **poe-only-top-smt**: Rev 2 with only PoE parts and all parts on top for easy automated assembly.
+** [Order bare pcbs from Dirty PCB](http://dirtypcbs.com/view.php?share=26685&accesskey=).
+* **servo-controller**: Rev 1 with buffered output to drive 3 servos.
+* **speaker-amplifier**: Rev 1 with an amplifier for the RPi's PWM audio output.
+* **ws2812-controller**: Rev 1 with a connector for NeoPixels.
+
+
 ## Raspberry Pi Zero - PoEPi
 
 The Raspberry Pi Zero is a low power and low footprint Raspberry Pi. It gives people an opportunity to move towards compact connected devices

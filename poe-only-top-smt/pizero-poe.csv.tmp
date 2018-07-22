@@ -1,0 +1,62 @@
+Component,Description,Part,References,Value,Footprint,Quantity Per PCB,Datasheet,Type,Digikey Part No,Mfg,Mfg Part No,Mouser Part No.,Alt Mfg,Alt Mfg Part No
+1,Unpolarized capacitor,C,C7 C8 C9 C10 C15 C16 C18 C21,0.1uf,C_0603,8,,SMT,,,,,,
+2,Unpolarized capacitor,C,C1 C24,0.1uf 100V,C_0603,2,,SMT,1276-6807-1-ND,Samsung,CL10B104KC8NNNC,,,
+3,Unpolarized capacitor,C,C11,10uf,C_1206,1,,SMT,,,,,,
+4,Unpolarized capacitor,C,C2 C3,16pf,C_0603,2,,SMT,,,,,,
+5,Unpolarized capacitor,C_Small,C19 C20,1uF,C_0603,2,,SMT,,,,,,
+6,Unpolarized capacitor,C,C13,2.2nF 250Vac,C_1812,1,,SMT,732-10345-1-ND,Wurth Electronics,885362211015,,,
+7,Unpolarized capacitor,C,C4 C5 C22 C23 C25,2.2uF 100V,C_1206,5,,SMT,490-7209-1-ND,Murata Electronics,GRM31CR72A225KA73L,,,
+8,Polarised capacitor,CP,C12,470uF,c_elec_8x10,1,,SMT,493-2169-1-ND,Nichicon,UWT1A471MNL1GS,,,
+9,Unpolarized capacitor,C,C14,6.8nf,C_0603,1,,SMT,,,,,,
+10,Unpolarized capacitor,C_Small,C17,nostuff-0.1u,C_0603,1,,nostuff,,,,,,
+11,,DIODE,D4,BAS516,sod523,1,,SMT,568-1603-1-ND,NXP Semiconductors,"BAS516,115",771-BAS516-T/R,,
+12,,BRIDGE,D1 D2,BRIDGE,MBS,2,,SMT,HD01DICT-ND,Diodes Inc,HD01-T,,,
+13,Led,Led_Small,D6 D7 D8,LED Green,LED_0603,3,,SMT,160-1183-1-ND,Lite-On,LTST-C190GKT,,,
+14,Diode schottky,D_Schottky,D5,SBM1040,DO-214BA,1,,SMT,RB058L150TE25CT-ND,Rohm Semiconductor,RB058L150TE25,,,
+15,Diode zener,ZENER,D3,SMAJ58A,DO-214BA,1,,SMT,SMAJ58ALFCT-ND,Littelfuse,SMAJ58A,576-SMAJ58A,,
+16,,hole-metalized-no4,H1 H2 H3 H4,hole-metalized-no4,hole-m3,4,,nostuff,,,,,,
+17,"ENC28J60 Single Chip Ethernet Interface, QFN-28+EP",ENC28J60-I/ML,IC1,ENC28J60-I/ML,QFN-28-1EP_6x6mm_Pitch0.65mm,1,http://ww1.microchip.com/downloads/en/devicedoc/39662a.pdf,SMT,ENC28J60-I/ML-ND,Microchip Technology,ENC28J60-I/ML,,,
+18,,RJ45-LED,J1,RJ45-LED,rj45-tyco-2-406549-7,1,,TH,RJHSE-5081-ND,Amphenol,RJHSE-5081,,,
+19,,INDUCTOR,L1,2.2uH,R_1206,1,,SMT,490-10966-1-ND,Murata Electronics,LQM2HPN2R2MEHL,81-LQM2HPN2R2MEHL,,
+20,,INDUCTOR,L2,BEAD,R_0603,1,,SMT,587-1867-1-ND,Taiyo Yuden,BK1608HS102-T,,,
+21,Connector 02x20,CONN_02X20,P2,dnp-REF-182665-01,Pin_Header_Straight_TH-SMT-NoPaste_2x20,1,,nostuff,,,,,,
+22,,DMMT3906_Dual_PNP,Q2,DMMT3906_Dual_PNP,SOT-23-6,1,,SMT,DMMT3906-7-FDICT-ND,Diodes Inc,DMMT3906-7-F,,,
+23,Transistor P-MOSFET (general),Q_PMOS_GSD,Q3,Q_PMOS_GSD,SOT-23,1,,SMT,DMP3099L-7DICT-ND,Diodes Inc,DMP3099L-7,,,
+24,,SI3440DV,Q1,SI3440DV,SOT-23-6,1,,SMT,SI3440DV-T1-E3CT-ND,Vishay Siliconix,SI3440DV-T1-E3,781-SI3440DV-E3,,
+25,Resistor,R,R6,0.05,R_1206,1,,SMT,CSNL1206FT50L0CT-ND,Stackpole Electronics,CSNL1206FT50L0,660-UR732BTTD50L0F,,
+26,Resistor,R,R2 R4 R10 R11 R15,10k,R_0603,5,,SMT,,,,,,
+27,Resistor,R,R3 R9 R13,1k,R_0603,3,,SMT,,,,,,
+28,Resistor,R,R8,2.32k,R_0603,1,,SMT,,,,,,
+29,Resistor,R_Small,R24,220,R_0603,1,,SMT,,,,,,
+30,Resistor,R_Small,R5,23k,R_0603,1,,SMT,,,,,,
+31,Resistor,R,R12,3.3k,R_0603,1,,SMT,,,,,,
+32,Resistor,R_Small,R19,47k,R_0603,1,,SMT,,,,,,
+33,Resistor,R,R14 R16 R17 R26,49.9,R_0603,4,,SMT,,,,,,
+34,Resistor,R,R21 R22,549,R_0603,2,,SMT,,,,,,
+35,Resistor,R,R7,6.8k,R_0603,1,,SMT,,,,,,
+36,Resistor,R_Small,R18,nostuff-1k,R_0603,1,,nostuff,,,,,,
+37,Resistor,R_Small,R20 R23,nostuff-3.9k,R_0603,2,,nostuff,,,,,,
+38,,H2019FNL,T1,H2019FNL,Transformer_Pulse_H2019FNL,1,,SMT,732-7063-1-ND,Wurth Electronics Inc,749013011A,,Pulse Electronics,H2019FNL
+39,,POE_TRANS,T2,TRANSFO,PoE_TRANS,1,,SMT,553-1983-1-ND,Pulse Electronics,PA1137NLT,710-7491199501,Wurth Electronics Inc,7491199501
+40,,VOLTAGE_REF,T3,VOLTAGE_REF,SOT-23,1,,SMT,TLV431BSN1T1GOSCT-ND,ON Semiconductor,TLV431BSN1T1G,863-TLV431BSN1T1G,,
+41,,AP7365_SOT-23-5,U4,AP7365_SOT-23-5,SOT-23-5,1,,SMT,AP7365-33WG-7DICT-ND,Diodes Inc,AP7365-33WG-7,,,
+42,,LTC4267,U1,LTC4267,QSOP-16_3.9x4.9mm_Pitch0.635mm,1,,SMT,LTC4267CGN-3#PBF-ND,Linear Technology,LTC4267CGN#PBF,,,
+43,"MFP 4L, Full Pitch Mini-Flat Random Phase Opto-Triac, Vdrm 250V, Ift 10mA",FODM3012,U2,PS2911-1-K-AX,OPTO_ISO,1,http://www.fairchildsemi.com/ds/FO/FODM3053.pdf,SMT,PS2911-1-K-AX-ND,CEL,PS2911-1-K-AX,551-PS2911-1-K-AX,,
+44,"32Kb (4096x8) Serial EEPROM with Unique Serial Number, SO8",AT24CS32-SSHM,U3,nostuff-AT24CS32-SSHM,TSSOP-8_4.4x3mm_Pitch0.65mm,1,http://www.atmel.com/Images/Atmel-8869-SEEPROM-AT24CS32-Datasheet.pdf,nostuff,,,,,,
+45,point,TEST_1P,W1 W2,TEST_1P,Measurement_Point_Round-SMD-Pad_Small,2,,nostuff,,,,,,
+46,Two pin crystal,Crystal,Y1,25Mhz,crystal_smd_5x3.2mm,1,,SMT,CTX1175CT-ND,CTS Frequency Controls,445I23D25M00000,774-445I23D25M00000,,
+
+
+
+
+
+Component Groups:,47
+Component Count:,79
+Fitted Components:,78
+Number of PCBs:,1
+Total components:,78
+Schematic Version:,0.1d
+Schematic Date:,2016-02-02
+BoM Date:,"Monday, October 24, 2016 'PMt' 09:59:35 PM"
+Schematic Source:,/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/pizero-poe.sch
+KiCad Version:,Eeschema 4.0.2-stable

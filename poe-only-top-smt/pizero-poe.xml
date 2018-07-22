@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/pizero-poe.sch</source>
-    <date>Sunday, October 09, 2016 'AMt' 03:27:38 AM</date>
+    <date>Tuesday, October 25, 2016 'PMt' 10:26:28 PM</date>
     <tool>Eeschema 4.0.2-stable</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -260,13 +260,15 @@
     </comp>
     <comp ref="C13">
       <value>2.2nF 250Vac</value>
-      <footprint>Capacitors_SMD:C_0603</footprint>
+      <footprint>Capacitors_SMD:C_1812</footprint>
       <fields>
         <field name="Type">SMT</field>
-        <field name="Mfg">TDK Corporation</field>
-        <field name="Mfg Part No">C1608C0G2E222J080AA</field>
-        <field name="Digikey Part No">445-15244-1-ND</field>
-        <field name="Description">2200pF 250V Ceramic Capacitor C0G, NP0 0603</field>
+        <field name="Mfg">Murata</field>
+        <field name="Mfg Part No">GA343QR7GD222KW01L</field>
+        <field name="Digikey Part No">490-3492-1-ND</field>
+        <field name="Description">2200pF 250VAC Ceramic Capacitor X7R 1812</field>
+        <field name="Alt Mfg">Wurth Electronics</field>
+        <field name="Alt Mfg Part No">885362211015</field>
       </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
@@ -455,10 +457,12 @@
       <fields>
         <field name="Mouser Part No.">710-7491199501</field>
         <field name="Type">SMT</field>
-        <field name="Mfg">Wurth Electronics Inc</field>
-        <field name="Mfg Part No">7491199501</field>
-        <field name="Digikey Part No">732-2433-1-ND</field>
-        <field name="Description">TRANS FLYBACK POE 127UH SMD</field>
+        <field name="Mfg">Pulse Electronics</field>
+        <field name="Mfg Part No">PA1137NLT</field>
+        <field name="Digikey Part No">553-1983-1-ND</field>
+        <field name="Description">XFRMR 5V 13.5W 127UH POE EP13</field>
+        <field name="Alt Mfg">Wurth Electronics Inc</field>
+        <field name="Alt Mfg Part No">7491199501</field>
       </fields>
       <libsource lib="pizero-poe-cache" part="POE_TRANS"/>
       <sheetpath names="/" tstamps="/"/>
@@ -544,6 +548,10 @@
       <footprint>Resistors_SMD:R_0603</footprint>
       <fields>
         <field name="Type">SMT</field>
+        <field name="Mfg">Taiyo Yuden</field>
+        <field name="Mfg Part No">BK1608HS102-T</field>
+        <field name="Digikey Part No">587-1867-1-ND</field>
+        <field name="Description">FERRITE BEAD 1 KOHM 0603 1LN</field>
       </fields>
       <libsource lib="device" part="INDUCTOR"/>
       <sheetpath names="/" tstamps="/"/>
@@ -1449,11 +1457,11 @@
     <library logical="opto">
       <uri>/Library/Application Support/kicad/library/opto.lib</uri>
     </library>
-    <library logical="pizero-poe-cache">
-      <uri>/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/pizero-poe-cache.lib</uri>
-    </library>
     <library logical="ltc4267">
       <uri>/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/project-libs/ltc4267.lib</uri>
+    </library>
+    <library logical="pizero-poe-cache">
+      <uri>/Users/ihartwig/repos/PoEPi-hardware/poe-only-top-smt/pizero-poe-cache.lib</uri>
     </library>
   </libraries>
   <nets>
