@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "pizero-papoe-rescue")(type "Legacy")(uri "${KIPRJMOD}/pizero-papoe-rescue.lib")(options "")(descr ""))
+  (lib (name "pizero-papoe-special")(type "KiCad")(uri "${KIPRJMOD}/pizero-papoe-special.kicad_sym")(options "")(descr ""))
+  (lib (name "TPS63070RNMR")(type "KiCad")(uri "/Users/ihartwig/Downloads/TPS63070RNMR/TPS63070RNMR.kicad_sym")(options "")(descr ""))
+)

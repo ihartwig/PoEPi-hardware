@@ -1,0 +1,6 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"C17","nostuff-0.1u","C_0603_1608Metric",45.750000,-8.000000,0.000000,bottom
+"R18","nostuff-1k","R_0603_1608Metric",40.250000,-8.000000,0.000000,bottom
+"R20","nostuff-3.9k","R_0603_1608Metric",40.250000,-12.000000,0.000000,bottom
+"R23","nostuff-3.9k","R_0603_1608Metric",40.250000,-10.000000,0.000000,bottom
+"U3","nostuff-AT24CS32-SSHM","TSSOP-8_4.4x3mm_P0.65mm",45.750000,-11.000000,180.000000,bottom

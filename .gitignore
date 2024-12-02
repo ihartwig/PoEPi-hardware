@@ -5,9 +5,11 @@
 *.bak
 *.bck
 *.kicad_pcb-bak
+rescue-backup/
 
-# Netlist files (exported from Eeschema)
+# Netlist and BOM files (exported from Eeschema)
 *.net
+*.xml
 
 # Autorouter files (exported from Pcbnew)
 .dsn

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name project_foot)(type KiCad)(uri "$(KIPRJMOD)/project-libs/project_foot.pretty")(options "")(descr ""))
+  (lib (name pizero-poe-special)(type KiCad)(uri "$(KIPRJMOD)/pizero-poe-special.pretty")(options "")(descr ""))
+)
